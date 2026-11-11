@@ -4,13 +4,11 @@ var FL=[["solid","Couleurs unies",[]],["rainbow","Dégradé multicolore",["#ff00
 ["pride","Arc-en-ciel",["#e40303","#ff8c00","#ffed00","#008026","#004dff","#750787"]],
 ["gay","Gay",["#078d70","#26ceaa","#98e8c1","#ffffff","#7bade2","#5049cc","#3d1a78"]],
 ["lesbian","Lesbien",["#d52d00","#ef7627","#ff9a56","#ffffff","#d162a4","#b55690","#a30262"]],
-["butch","Butch",["#1b3486","#697db6","#8a92a9","#ffffff","#d1c6e8","#600fd6","#51038a"]],
 ["bi","Bi",["#d60270","#d60270","#9b4f96","#0038a8","#0038a8"]],
 ["pan","Pan",["#ff218c","#ffd800","#21b1ff"]],
 ["poly","Polysexuel",["#f61cb9","#07d569","#1c92f6"]],
 ["omni","Omnisexuel",["#fe9ace","#ff53bf","#200044","#6760fe","#8ea6ff"]],
 ["trans","Trans",["#5bcefa","#f5a9b8","#ffffff","#f5a9b8","#5bcefa"]],
-["tmasc","Transmasculin",["#ff8abd","#cdf5fe","#9ae9ff","#74dfff","#9ae9ff","#cdf5fe","#ff8abd"]],
 ["nb","Non-binaire",["#fcf434","#ffffff","#9c59d1","#2c2c2c"]],
 ["gq","Genderqueer",["#b57edc","#ffffff","#4a8123"]],
 ["fluid","Genre fluide",["#ff75a2","#ffffff","#be18d6","#000000","#333ebd"]],
@@ -19,7 +17,7 @@ var FL=[["solid","Couleurs unies",[]],["rainbow","Dégradé multicolore",["#ff00
 ["ace","Asexuel",["#000000","#a3a3a3","#ffffff","#800080"]],
 ["aro","Aromantique",["#3da542","#a7d379","#ffffff","#a9a9a9","#000000"]],
 ["femboy","Femboy",["#d460a7","#e4adcd","#ffffff","#57cef8","#ffffff","#e4adcd","#d460a7"]],
-["antiia","Anti IA générative",["#000000","#d62828","#ffffff","#d62828","#000000"]]];
+];
 var FLOPT=FL.map(function(f){return f[0]+"|"+f[1]});
 var FN={};FL.forEach(function(f){FN[f[0]]=f[2]});
 var KD=["#ff0000","#ffffff","#0000ff","#ffffff","#ff0000","#00aa00","#ffee00","#8800cc","#000000"];
@@ -206,9 +204,8 @@ function chip(box,html,fn){var b=document.createElement('button');b.className='c
 function setAll(o){Object.keys(o).forEach(function(k){set(k,o[k])});render()}
 function model(f,a,b,x){var o={sm:'flag',fl:f,mx:'none',aT:true,aB:false,aG:true,aR:false,c1:'#000000',c2:'#ff0000',rg:'#000000',bg:'#ffffff',tc:'#ffffff',ow:true,oc:'#ffffff',bk:'#000000',bd:'l',dp:78,bs:68,tr:false,txt:a,txt2:b};for(var k in x)o[k]=x[k];setAll(o)}
 chip('models','Modèle trans',function(){model('trans','ANTI-TRANSPHOBE','ACTION')});
-chip('models','Modèle arc-en-ciel',function(){model('pride','ANTI-HOMOPHOBE','ANTIFASCIST ACTION')});
+chip('models','Modèle arc-en-ciel',function(){model('pride','ANTI-HOMOPHOBE','ACTION')});
 chip('models','Modèle femboy',function(){model('femboy','FEMBOY','ANTI FASCISTE')});
-chip('models','Femboy × trans (mélange)',function(){model('femboy','FEMBOY','TRANS',{mx:'blend',fl2:'trans'})});
 chip('tools','⇄ Échanger',function(){var a=get('c1');set('c1',get('c2'));set('c2',a);render()});
 chip('tools','🎲 Couleurs',function(){
   var h=Math.floor(Math.random()*360);
